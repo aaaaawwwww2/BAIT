@@ -1,0 +1,146 @@
+<html>
+<head>
+<title>
+    text
+    </title>
+    <style type="text/css"  >
+        body{
+            background-color:deepskyblue;
+        }
+        form{
+            margin: auto;
+            background-image:url(photo.jpg);
+            background-repeat: no-repeat;
+            position: absolute;
+            left: 400px;
+            top: 150px;
+            width: 700px;
+            height: 400px;
+            
+            
+            
+        }
+        #item{
+            margin: auto;
+            position: absolute;
+            
+            left: 180px;
+            top:80px;
+            font-size: 20px;
+            
+        }
+        .t{
+            position: absolute;
+            left: 60px;
+            font-size: 20px;
+        }
+        label{
+            position: absolute;
+            left: -70px;
+            display:inherit;
+            
+            width: 150px;
+            
+            
+            
+            
+            
+        }
+        
+    </style>
+    <script>
+        var g = 0;
+        function validation(){
+           
+            var t1 =document.getElementById('t1').value;
+            var t2 =document.getElementById('t2').value;
+            var t3 =document.getElementById('t3').value;
+            var t4 =document.getElementById('t4').value;
+            var t5 =document.getElementById('t5').value;
+        var tt1 = t1.search(/[%+&+!+@+#+$+^+*+(+)+>+<+?+\+\+\-]/);
+            var tt11 = t1.search(/\d+/);
+             var tt2 = t2.search(/[%+&+!+@+#+$+^+*+(+)+>+<+?+\+\+\-]/);
+            var tt22 = t2.search(/\d+/);
+           
+        var s = t4.search(/[0]+\d{10}/);
+            var w = t4.search(/[1]+\d{10}/);
+            var b = t5.search(/[%+&+!+@+#+$+^+*+(+)+>+<+?+\+\+\-]/);
+            var j = t3.search(/\d+/);
+            var r =0;
+             var g = 0;
+            
+            
+            
+          
+        if( t1 ==""||t2 ==""||t3 ==""||t4 == ""||t5==""){
+            alert("يوجد حقل فارغ");
+            
+            r = 1;
+            g = 1;
+        }
+    
+            if(r !=1){
+            if(s != 0 && w != 0){
+                alert("يرجى إدخال 11 رقم في خانة الرقم الوطني تبدأ ب 0 أو 1");
+                g = 1;
+            }
+            
+            if(b == 0){
+                
+                    alert("يجب عدم إدخال رموز في حقل العنوان");
+                g= 1}
+            
+            
+            if(j != 0){
+                
+                    alert("الرجاء إدخال ارقام فقط في حقل رقم العيادة");
+                g = 1;
+                 
+            }
+                
+            
+            if(!(t3 > 0 && t3 < 100)){
+                
+                    alert("يجب أن يكون رقم العيادة بين 0-100");
+                g = 1}
+                
+            
+            if(tt1 == 0||tt11 == 0){
+                alert("يرجى عدم إدخال رموز أو أرقام في حقل الاسم ");
+                g = 1}
+            if(tt2 == 0||tt22 == 0){
+                alert("يرجى عدم إدخال رموز أو أرقام في حقل الشهرة ");
+                g = 1}
+            }
+            if(g != 1)
+         document.getElementById("u").action = "test2.html";
+             
+            
+        
+        }
+        
+     
+         
+        
+        
+       
+        
+        
+    </script>
+</head>
+<body>
+    <form onsubmit=" return validation(); " id ="u"  >
+        <div id="item">
+ <label>الأسم:</label> <input type="text" id="t1"   class="t"/><br/><br/>
+     
+ <label>الشهرة:</label> <input type="text" id="t2"  class="t"/><br/><br/>
+ <label>رقم العيادة:</label>  <input type="text" id="t3"  class="t"/><br/><br/>
+ <label>الرقم الوطني:</label>  <input type="text" id="t4"  class="t"/><br/><br/>
+ <label>العنوان:</label> <input type="text" id="t5"  class="t"/><br/><br/>
+            <input type="submit" name="s" id="s"  class="t" /><br/><br/>
+            </div>
+        </form>
+    
+</body>
+    
+</html>
